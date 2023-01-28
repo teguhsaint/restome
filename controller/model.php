@@ -24,6 +24,13 @@ function view_data($table_name)
     return $result;
 }
 
+function view_data_where($table_name, $where, $value_key)
+{
+    $query = "SELECT * FROM $table_name WHERE $where=$value_key";
+    $result = mysqli_query(koneksi(), $query);
+    return $result;
+}
+
 
 function view_count_sum($table_name, $counting_data, $group, $group_by)
 {
