@@ -39,7 +39,12 @@ include 'controller/model.php';
             background-color: #455A64;
             width: 290px;
             min-height: 100vh;
+            margin-left: -290px;
+            transition: all 0.5s;
+        }
 
+        .sdbar.show {
+            margin-left: 0;
         }
 
         .sdbar .sidebar-brand h3 {
@@ -65,6 +70,57 @@ include 'controller/model.php';
             margin-left: 20px;
             color: #C5CAE9;
         }
+
+
+
+
+
+        @media screen and (max-width:768px) {
+
+            .sdbar.show {
+                width: 350px;
+
+                margin-left: -350px;
+            }
+
+            .sdbar {
+                width: 350px;
+                margin-left: 0px;
+                position: absolute;
+                z-index: 2;
+            }
+
+            .menuku {
+                display: block;
+            }
+
+        }
+
+        /* 
+        @media screen and (max-width:425px) {
+            .sdbar.show {
+                width: 500px;
+            }
+        }
+
+        @media screen and (max-width:375px) {
+            .sdbar.show {
+                width: 500px;
+            }
+        }
+
+        @media screen and (max-width:320px) {
+            .sdbar.show {
+                width: 600px;
+            }
+        } */
+
+        .btn-menu{
+            position: absolute;
+            right: 10px;
+            top: 15px;
+color: white!important;
+        }
     </style>
 </head>
 
@@ -72,11 +128,15 @@ include 'controller/model.php';
 
     <div class="d-flex">
 
-        <div class="sdbar">
-            <div class="sidebar-brand">
-                <br>
+        <div class="sdbar show">
+            <div class="sidebar-brand py-3 align-items-center">
                 <h3>BINA ADMIN</h3>
-                <hr class="text-white mt-2 mb-5">
+                <button onclick="tampil_menu()" class="btn d-lg-none border-0 btn-menu">
+                    <!-- <a class="navbar-brand text-dark" href="#"><i class="fas fa-bars"></i></a> -->
+                    <div class="menu-icon">
+                        <i class="fas fa-times fs-4"></i>
+                    </div>
+                </button>
             </div>
 
             <div class="menu">
@@ -86,23 +146,14 @@ include 'controller/model.php';
             </div>
         </div>
         <div class="content w-100">
-            <nav class="navbar navbar-expand-sm navbar-dark bg-secondary">
+            <nav class="navbar navbar-dark bg-light shadow py-3">
                 <div class="container">
-                    <a class="navbar-brand" href="index.php">Admin</a>
-                    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                    <button onclick="tampil_menu()" class="menuku bg-transparent border-0">
+                        <!-- <a class="navbar-brand text-dark" href="#"><i class="fas fa-bars"></i></a> -->
+                        <div class="menu-icon">
+                            <i class="fas fa-bars" style="font-size: 25px;"></i>
+                        </div>
                     </button>
-                    <div class="collapse navbar-collapse" id="collapsibleNavId">
-                        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nama User</a>
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownId">
-                                    <a class="dropdown-item" href="#">Edit Profil</a>
-                                    <a class="dropdown-item" href="#">Logout</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </nav>
 
@@ -159,6 +210,12 @@ include 'controller/model.php';
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
     </script>
 
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+    <script>
+        function tampil_menu() {
+            $('.sdbar').toggleClass('show')
+        }
+    </script>
 
 </body>
 
