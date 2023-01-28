@@ -24,6 +24,21 @@ function view_data($table_name)
     return $result;
 }
 
+
+function view_count_sum($table_name, $counting_data, $group, $group_by)
+{
+    $query = '';
+    if ($group == true) {
+        $query = "SELECT count($counting_data) as cnt FROM $table_name GROUP BY $group_by";
+    } else {
+        $query = "SELECT count($counting_data) as cnt FROM $table_name";
+    }
+
+
+    $result = mysqli_query(koneksi(), $query);
+    return $result;
+}
+
 function update_data($set_data, $key_finder, $value_key, $table_name, $primarykey)
 {
     $imp_data = implode(",", $set_data);

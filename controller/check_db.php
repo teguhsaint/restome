@@ -19,7 +19,7 @@ try {
     $conn = new mysqli("localhost", "root", "", $db_name);
 
     $query = '';
-    $sqlScript = file('controller/db.sql');
+    $sqlScript = file('db.sql');
     foreach ($sqlScript as $line) {
 
         $startWith = substr(trim($line), 0, 2);
