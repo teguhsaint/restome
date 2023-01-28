@@ -1,10 +1,10 @@
-<?php 
+<?php
 $db_host = "localhost";
 $db_user = "root";
 $db_password = "";
 $db_name = "restome_db";
 
-$koneksi = mysqli_connect($db_host,$db_user,$db_password);
+$koneksi = mysqli_connect($db_host, $db_user, $db_password);
 
 try {
     $q = mysqli_query($koneksi, "USE restome_db");
@@ -19,7 +19,7 @@ try {
     $conn = new mysqli("localhost", "root", "", $db_name);
 
     $query = '';
-    $sqlScript = file('db.sql');
+    $sqlScript = file('controller/db.sql');
     foreach ($sqlScript as $line) {
 
         $startWith = substr(trim($line), 0, 2);
@@ -35,6 +35,5 @@ try {
             $query = '';
         }
     }
-    echo '<div class="success-response sql-import-response">SQL file imported successfully</div>';
-
+    echo '<div class="success-response sql-import-response">Database imported successfully</div>';
 }
