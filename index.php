@@ -25,6 +25,8 @@ include 'controller/model.php';
 
     <script src="assets/lib/select2/js/select2.full.min.js"></script>
 
+    <link rel="stylesheet" href="assets/FA5PRO/css/all.min.css">
+
 
 </head>
 
