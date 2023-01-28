@@ -15,9 +15,10 @@ include 'controller/model.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/lib/datatable/css/datatables.min.css">
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js' integrity='sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="assets/lib/select2/css/select2.min.css">
     <link rel="stylesheet" href="assets/lib/select2/css/select2-bootstrap-5-theme.min.css">
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js' integrity='sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==' crossorigin='anonymous'></script>
 
     <script src="assets/lib/datatable/js/datatables.min.js"></script>
     <script src="assets/lib/datatable/js/pdfmake.min.js"></script>
@@ -104,27 +105,31 @@ include 'controller/model.php';
                     </div>
                 </div>
             </nav>
+
+            <div class="container">
+
+                <?php
+                $pages_dir  =  'pages';
+                if (!empty($_GET['p'])) {
+                    $pages  =  scandir($pages_dir, 0);
+                    unset($pages[0], $pages[1]);
+                    $p  =  $_GET['p'];
+                    if (in_array($p . '.php', $pages)) {
+                        include($pages_dir . '/' . $p . '.php');
+                    } else {
+                        echo "Halaman tidak ditemukan!";
+                    }
+                } else {
+                    include($pages_dir . '/home.php');
+                } ?>
+            </div>
         </div>
+
+
     </div>
 
 
 
-    <div class="container">
-        <?php
-        $pages_dir  =  'pages';
-        if (!empty($_GET['p'])) {
-            $pages  =  scandir($pages_dir, 0);
-            unset($pages[0], $pages[1]);
-            $p  =  $_GET['p'];
-            if (in_array($p . '.php', $pages)) {
-                include($pages_dir . '/' . $p . '.php');
-            } else {
-                echo "Halaman tidak ditemukan!";
-            }
-        } else {
-            include($pages_dir . '/home.php');
-        } ?>
-    </div>
 
 
     <!-- Bootstrap JavaScript Libraries -->
@@ -133,6 +138,8 @@ include 'controller/model.php';
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
     </script>
+
+
 </body>
 
 </html>
