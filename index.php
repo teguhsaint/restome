@@ -27,40 +27,87 @@ include 'controller/model.php';
 
     <link rel="stylesheet" href="assets/FA5PRO/css/all.min.css">
 
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
 
+        .sdbar {
+            display: block;
+            background-color: #455A64;
+            width: 290px;
+            min-height: 100vh;
+
+        }
+
+        .sdbar .sidebar-brand h3 {
+            color: mintcream;
+            text-align: center;
+        }
+
+        .sdbar .menu a {
+            text-decoration: none;
+            color: #C5CAE9;
+            font-size: 20px;
+            margin-left: 20px;
+            display: list-item;
+            list-style: none;
+            transition: 0.3s;
+        }
+
+        .sdbar .menu a:hover {
+            margin-left: 30px;
+        }
+
+        .sdbar .menu span {
+            margin-left: 20px;
+            color: #C5CAE9;
+        }
+    </style>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?p=read">DATA MENU</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="#">Action 1</a>
-                            <a class="dropdown-item" href="#">Action 2</a>
-                        </div>
-                    </li>
-                </ul>
-                <form class="d-flex my-2 my-lg-0">
-                    <input class="form-control me-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+    <div class="d-flex">
+
+        <div class="sdbar">
+            <div class="sidebar-brand">
+                <br>
+                <h3>BINA ADMIN</h3>
+                <hr class="text-white mt-2 mb-5">
+            </div>
+
+            <div class="menu">
+                <a href="index.php" class="mb-4"><i class="fas fa-house ms-3"></i><span style="margin-left: 14px;"> Home</span></a>
+                <a href="index.php?p=read" class="mb-4"><i class="fas fa-file ms-3"></i><span> Data Menu</span></a>
+                <a href="" class="mb-4"><i class="fas fa-plus ms-3"></i><span style="margin-left: 16px;"> Tambah Menu</span></a>
             </div>
         </div>
-    </nav>
+        <div class="content w-100">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-secondary">
+                <div class="container">
+                    <a class="navbar-brand" href="index.php">Admin</a>
+                    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavId">
+                        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nama User</a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownId">
+                                    <a class="dropdown-item" href="#">Edit Profil</a>
+                                    <a class="dropdown-item" href="#">Logout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
 
     <div class="container">
         <?php
