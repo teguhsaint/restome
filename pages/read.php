@@ -25,7 +25,7 @@
                 <td>Rp. <?= str_replace(',','.',number_format($read['harga'],0)); ?></td>
                 <td>
                     <a class="me-2 text-warning" href="index.php?p=edit_menu&id_menu=<?= $read['id_menu']; ?>"><i class="far fa-edit"></i></a>
-                    <a class="text-danger" href="index.php?p=hapus&id_menu=<?= $read['id_menu']; ?>"><i class="far fa-trash"></i></a>
+                    <a onclick="return confirm('Yakin Mau Menghapus <?= $read['nama_menu'] ?> ?')" class="text-danger" href="index.php?p=hapus&jenis=data_menu&id_menu=<?= $read['id_menu']; ?>"><i class="far fa-trash"></i></a>
 
                 </td>
             </tr>

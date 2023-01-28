@@ -56,6 +56,13 @@ function update_data($set_data, $key_finder, $value_key, $table_name, $primaryke
         $query = "UPDATE $table_name SET $imp_data WHERE $key_finder LIKE '$value_key'";
     }
     mysqli_query(koneksi(), $query);
+?>
+    <script>
+        $(document).ready(function() {
+            $("#liveToast").toast("show");
+        });
+    </script>
+    <?php
 }
 
 function delete_data($key_finder, $value_key, $table_name, $primarykey)
@@ -67,4 +74,11 @@ function delete_data($key_finder, $value_key, $table_name, $primarykey)
         $query = "DELETE FROM $table_name WHERE $key_finder LIKE '$value_key'";
     }
     mysqli_query(koneksi(), $query);
+    if ($table_name == 'tb_menu') {
+    ?>
+        <script>
+            window.location.href = 'index.php?p=read';
+        </script>
+<?php
+    }
 }

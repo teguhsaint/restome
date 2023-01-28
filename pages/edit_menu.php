@@ -4,8 +4,9 @@
 
 $hasil = view_data_where('tb_menu', 'id_menu', $_GET['id_menu']);
 $no = 1;
+$nama_menu = '';
 while ($read = mysqli_fetch_assoc($hasil)) {
-
+    $nama_menu = $read['nama_menu'];
 ?>
 
     <form action="" method="post">
@@ -23,7 +24,7 @@ while ($read = mysqli_fetch_assoc($hasil)) {
                 $hasils = view_data('tb_kategori');
                 $no = 1;
                 while ($reads = mysqli_fetch_assoc($hasils)) { ?>
-                    <option value="<?= $reads['keterangan'] ?>"><?= $reads['keterangan'] ?></option>
+                    <option <?php if ($read['m_kategori'] == $reads['keterangan']) echo 'selected'; ?> value="<?= $reads['keterangan'] ?>"><?= $reads['keterangan'] ?></option>
                 <?php
                 }
                 ?>
@@ -33,14 +34,27 @@ while ($read = mysqli_fetch_assoc($hasil)) {
 
         <div class="mb-3">
             <label for="harga_menu" class="form-label">Harga Menu</label>
-            <input type="text" value="<?= $read['harga'] ?>" name="harga_menu" id="harga_menu" class="form-control" placeholder="" aria-describedby="helpId">
+            <input type="text" value="<?= $read['harga'] ?>" name="harga" id="harga_menu" class="form-control" placeholder="" aria-describedby="helpId">
             <small id="helpId" class="text-muted"></small>
         </div>
 
+        <button type="submit" name="simpans" class="btn btn-success">Update Menu</button>
     </form>
 
-    <?= $read['nama_menu']; ?>
-    <?= $read['m_kategori']; ?>
 
 <?php
 } ?>
+
+<?php
+
+if (isset($_POST['simpans'])) {
+    $data = [];
+    foreach ($_POST as $key => $value) {
+        if ($key != 'simpans') {
+            array_push($data, "$key='$value'");
+        }
+    }
+    update_data($data, 'id_menu', $_GET['id_menu'], 'tb_menu', true);
+}
+
+?>
