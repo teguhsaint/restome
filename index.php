@@ -20,6 +20,7 @@ include 'controller/model.php';
     <link rel="stylesheet" href="assets/lib/select2/css/select2-bootstrap-5-theme.min.css">
 
     <script src="assets/lib/datatable/js/datatables.min.js"></script>
+    <script src="assets/lib/datatable/js/pdfmake.min.js"></script>
     <script src="assets/lib/datatable/js/vfs_fonts.js"></script>
 
     <script src="assets/lib/select2/js/select2.full.min.js"></script>
