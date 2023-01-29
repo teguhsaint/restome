@@ -40,23 +40,29 @@ include 'controller/model.php';
             width: 290px;
             min-height: 100vh;
             margin-left: -290px;
-            transition: all 0.5s;
+            transition: all 0.3s;
         }
 
         .sdbar.show {
             margin-left: 0;
         }
 
-        .sdbar .sidebar-brand h3 {
+        .sdbar .sidebar-brand h4 {
             color: mintcream;
             text-align: center;
+            letter-spacing: 2px;
+            padding: 5px 0px;
         }
 
+
         .sdbar .menu a {
+            padding: 15px 0px;
+
             text-decoration: none;
-            color: #C5CAE9;
-            font-size: 20px;
+            color: #ffffff96;
+            font-size: 16px;
             margin-left: 20px;
+
             display: list-item;
             list-style: none;
             transition: 0.3s;
@@ -64,11 +70,17 @@ include 'controller/model.php';
 
         .sdbar .menu a:hover {
             margin-left: 30px;
+            color: #ffffff;
         }
+
+        .sdbar .menu a:hover span {
+            color: #ffffff;
+        }
+
 
         .sdbar .menu span {
             margin-left: 20px;
-            color: #C5CAE9;
+            color: #ffffff96;
         }
 
 
@@ -115,22 +127,23 @@ include 'controller/model.php';
             }
         } */
 
-        .btn-menu{
+        .btn-menu {
             position: absolute;
             right: 10px;
             top: 15px;
-color: white!important;
+            color: white !important;
         }
     </style>
+
 </head>
 
-<body>
+<body class="bg-light">
 
     <div class="d-flex">
 
         <div class="sdbar show">
             <div class="sidebar-brand py-3 align-items-center">
-                <h3>BINA ADMIN</h3>
+                <h4>BINA ADMIN</h4>
                 <button onclick="tampil_menu()" class="btn d-lg-none border-0 btn-menu">
                     <!-- <a class="navbar-brand text-dark" href="#"><i class="fas fa-bars"></i></a> -->
                     <div class="menu-icon">
@@ -140,18 +153,18 @@ color: white!important;
             </div>
 
             <div class="menu">
-                <a href="index.php" class="mb-4"><i class="fas fa-house ms-3"></i><span style="margin-left: 14px;"> Home</span></a>
-                <a href="index.php?p=read" class="mb-4"><i class="fas fa-file ms-3"></i><span> Data Menu</span></a>
-                <a href="" class="mb-4"><i class="fas fa-plus ms-3"></i><span style="margin-left: 16px;"> Tambah Menu</span></a>
+                <a href="index.php"><i class="fas fa-house ms-3"></i><span style="margin-left: 14px;"> Home</span></a>
+                <a href="index.php?p=read"><i class="fas fa-file ms-3"></i><span> Data Menu</span></a>
+                <a href=""><i class="fas fa-plus ms-3"></i><span style="margin-left: 16px;"> Tambah Menu</span></a>
             </div>
         </div>
         <div class="content w-100">
-            <nav class="navbar navbar-dark bg-light shadow py-3">
+            <nav class="navbar navbar-dark bg-white shadow py-3">
                 <div class="container">
                     <button onclick="tampil_menu()" class="menuku bg-transparent border-0">
                         <!-- <a class="navbar-brand text-dark" href="#"><i class="fas fa-bars"></i></a> -->
                         <div class="menu-icon">
-                            <i class="fas fa-bars" style="font-size: 25px;"></i>
+                            <i class="fas fa-bars text-muted" style="font-size: 20px;"></i>
                         </div>
                     </button>
                 </div>
@@ -210,7 +223,6 @@ color: white!important;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
     <script>
         function tampil_menu() {
             $('.sdbar').toggleClass('show')
