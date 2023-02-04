@@ -1,3 +1,13 @@
+# BINA ICON SHORT CODE #
+
+## FEATURES ICON ##
+
+- [x] FONT AWESOME V6
+- [x] BOOTSTRAP ICONS
+- [X] FEATHER ICONS
+
+----------------------------------------------------
+### FEATHER ICONS CHEAT SHEET ###
 |Icon|Short Code|Output In Html|
 |-----|-----|-----|
 |activity|bif-activity|```<i data-feather='activity'></i> ```
