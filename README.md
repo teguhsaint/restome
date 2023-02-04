@@ -1,6 +1,6 @@
-|Icon|Short Code|Output|
-|---|---|---|
-|activity|bif-activity|``` <i data-feather='activity'></i> ```
+|Icon|Short Code|Output In Html|
+|-----|-----|-----|
+|activity|bif-activity|```<i data-feather='activity'></i> ```
 |airplay|bif-airplay|``` <i data-feather='airplay'></i> ```
 |alert-circle|bif-alert-circle|``` <i data-feather='alert-circle'></i> ```
 |alert-octagon|bif-alert-octagon|``` <i data-feather='alert-octagon'></i> ```
