@@ -1,13 +1,23 @@
-# BINA ICON SHORT CODE #
+# BINA ICONS SHORT CODE #
+BINA ICONS SC is Short Code Or Snippet For Popular Icon In World Wide Website.
+Including Bootstrap, Fontawesom, and Feather Icons.
 
-## FEATURES ICON ##
+
+## List ICON ##
 
 - [x] FONT AWESOME V6
 - [x] BOOTSTRAP ICONS
 - [X] FEATHER ICONS
 
+## Variant ##
+
+- FONT AWESOME V6 Free - Include Reguler And Brand (FAS & FAB)
+- BOOTSTRAP ICONS - All Icons
+- FEATHER ICONS - All Icon
+
+
 ----------------------------------------------------
-### FEATHER ICONS CHEAT SHEET ###
+### FEATHER ICONS TABLE CHEAT SHEET ###
 |Icon|Short Code|Output In Html|
 |-----|-----|-----|
 |activity|bif-activity|```<i data-feather='activity'></i> ```
